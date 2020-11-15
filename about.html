@@ -74,50 +74,21 @@
            navbar-inverse sets background to dark color scheme                        
       -->
       
-      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <a class="navbar-brand" href="personal-page.html">Dan Perkins</a>
-        
-           <!-- 5. bootstrap requires a containing element to wrap site contents.          
-           There are two container classes to choose from (based on the above css bootstrap):
-           (1) .container class provides a responsive fixed width container
-           (2) .container-fluid class provides a full width container, spanning
-               the entire width of the view point
-           Both .container and .container-fluid set a max-width on the content
-           and cause the center alignment  
-        -->      
-        <!-- <div class="container">    -->     
-            
-          <!-- 6. The button is hidden on desktop and becomes a dropdown hamburger menu on mobile.
-               The navigation bar is hidden on small screens and 
-               replaced by a button in the top right corner (try to re-size this window).
-               Only when the button (hamburger menu) is clicked, the navigation bar will be displayed.
-               (For bootstrap 3, use <span class="icon-bar"> for each line in the hamburger menu)                  
-          -->           
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="personal-page.html">Dan Perkins</a>         
         
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- </div> -->
-        
-        
-        <!-- 7. nav-collapse makes it possible to expand and collapse the menu
-		        require: javascript plugin (we use js bootstrap here, at the bottom)		        		     
-		        commonly, lists with links are used for navigation
-		        
-		        justify-content-end is similar to justify right 
-		        (bootstrap 3 use navbar-right)
-		        
-		        try justify-content-center
-		        
-		        navbar-nav is a sub-component of navbar which support dropdowns
-		        
-		        active to indicate the curret page (apply format to nav-link)
-        -->        
+    
         <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">   
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="personal-page.html">Home</a>
-            </li>              
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="personal-page.html">Project Overview</a>
+            </li>           
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
               <div class="dropdown-menu" aria-labelledby="dropdown01">
@@ -190,16 +161,16 @@
       <div class="container">
               <h1>Short Term Goals</h1>
               <ul>
-                <li>Continue to work on one personal project while taking courses in the Fall Semester</li>
-                <li>Read at least 20 books in 2019</li>
-                <li>Attend a Toastmasters Conference</li>
+                <li>Continue to work on personal projects to enhance software engineering skills</li>
+                <li>Read at least 80 books in 2020</li>
                 <li>Work for a company where I am excited to go to work every morning</li>
               </ul>
               <h1>Long Term Goals</h1>
               <ul>
                 <li>Become a Senior Software Developer in 10 years</li>
-                <li>Improve my skillset with Artificial Intelligence within the next 2 years to the point that I can consistently work on projects using AI to better the lives of users</li>
+                <li>Improve my skillset with Artificial Intelligence within the next 2 years to the point that I can consistently work on projects using responsible AI to better the lives of users</li>
                 <li>Help individuals and small businesses with daily functions in order to save time and money with the software that I write</li>
+                <li>Run a marathon</li>
               </ul>
           </div>
         </div> 
