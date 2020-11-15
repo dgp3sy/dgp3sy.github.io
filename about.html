@@ -1,0 +1,245 @@
+
+<!-- 1. create HTML5 doctype -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!-- required to handle IE -->
+        
+    <!-- 2. include meta tag to ensure proper rendering and touch zooming
+         (bootstrap is designed to be responsive to mobile.
+         Mobile-first styles are part of the core framework.)
+    -->  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- the width=device-width part sets the width of the page to follow
+         the screen-width of the device (which will vary depending on the device)
+         the initial-scale=1 part sets the initialize zoom level when the page 
+         is first loaded by the browser. 
+    --> 
+  
+    <!-- The above 2 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- to use bootstrap:
+         option1: download the files (from http://getbootstrap.com) and put them in 
+                  your working directory
+         option2: make a link to the files from a CDN (Content Delivery Network)       
+    -->
+  
+    <!-- 3. link bootstrap pages (let's use CDN here)
+         Two basic bootstrap pages are  
+             https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" (style, link here)
+             https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js (js, link at the bottom)             
+         use a link tag to link an external resource
+         a rel (relationship) specifies relationship between the current document and the linked resource
+         href (hypertext reference) specifies the link's destination 
+    -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />  for version 3-->     
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> if you downloaded bootstrap to your computer -->
+  
+    <!-- required scripts for IE --> 
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    
+    <!-- you may add styles here (document-level) or as an external file (external level) -->
+<!--     <style>
+      body { padding-top: 50px; }    // this is to leave space between navbar and heading 
+                                     // when navbar-fixed-top is used
+    </style> -->
+    
+    <title>About Me</title>
+        
+  </head>
+  <body>
+    <header>
+    
+      <!-- 4. add navbar (code from getbootstrap.com >> components >> navbar) -->
+      
+      <!-- try 
+           navbar-static-top
+             - creates a full-width navbar that scrolls away with the page 
+             - removes the left, right, and top border created by navbar-default
+           navbar-fixed-top
+             - creates a full-width navbar that sticks to the page 
+           navbar-expand-md
+             - allows a navbar to be extended or collapse, depending on the screen size
+             - stacks the navbar vertically on medium (md) screen 
+             - try -xl | lg | md | sm
+               
+           navbar-inverse sets background to dark color scheme                        
+      -->
+      
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="personal-page.html">Dan Perkins</a>
+        
+           <!-- 5. bootstrap requires a containing element to wrap site contents.          
+           There are two container classes to choose from (based on the above css bootstrap):
+           (1) .container class provides a responsive fixed width container
+           (2) .container-fluid class provides a full width container, spanning
+               the entire width of the view point
+           Both .container and .container-fluid set a max-width on the content
+           and cause the center alignment  
+        -->      
+        <!-- <div class="container">    -->     
+            
+          <!-- 6. The button is hidden on desktop and becomes a dropdown hamburger menu on mobile.
+               The navigation bar is hidden on small screens and 
+               replaced by a button in the top right corner (try to re-size this window).
+               Only when the button (hamburger menu) is clicked, the navigation bar will be displayed.
+               (For bootstrap 3, use <span class="icon-bar"> for each line in the hamburger menu)                  
+          -->           
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- </div> -->
+        
+        
+        <!-- 7. nav-collapse makes it possible to expand and collapse the menu
+		        require: javascript plugin (we use js bootstrap here, at the bottom)		        		     
+		        commonly, lists with links are used for navigation
+		        
+		        justify-content-end is similar to justify right 
+		        (bootstrap 3 use navbar-right)
+		        
+		        try justify-content-center
+		        
+		        navbar-nav is a sub-component of navbar which support dropdowns
+		        
+		        active to indicate the curret page (apply format to nav-link)
+        -->        
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">   
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="personal-page.html">Home</a>
+            </li>              
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="CRM-mobile.html">CRM Mobile</a>
+                <a class="dropdown-item" href="python-processor.html">PyProccessor</a>
+                <a class="dropdown-item" href="raspberry-pi.html">Rasberry Pi Server</a>
+             </div>
+            </li>                            
+            <li class="nav-item"> 
+              <a class="nav-link" href="about.html">About Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact-info.html">Contact</a>
+            </li>            
+          </ul>
+        </div>  
+      </nav>
+
+    </header>
+            
+    <!-- 9. let's add jumbotron header
+        Bootstrap jumbotron header is one big, attention-grabbing header 
+        (that people view it as "modern" but we may view it as "space-wasting")
+        
+        To add a jumbotron header, as usual, bootstrap requires it to be in a container
+        (we'll comment out / remove the "Hello world!" and add the header) 
+    -->
+    <!-- <h1>Hello world!</h1> -->
+    <div class="jumbotron" style="margin-bottom:0;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <h1>Interests</h1><br>
+              <p>I am currently pursing a Bachelor's Degree at the University of Virginia, with a double major in Computer Science and Economics. I am interested in a career in Software Development, preferrably within the financial services industry. I have a special passion for working on projects that involve anything relating to computer programming. I am always thinking of processes that I encounter in school, work, and life that can be automated to save time and money. In addition, I have also invovled projects involving data analysis and machine learning. This past semester, I completed a course about the Foundations of Data Analysis, where we learned about Principal Value Decomposition, Logistic Regression, Neural Networks, and Image Recognition, among other things. This was extremely interesting, challenging, and rewarding. This class broadened the horizions of what I thought I was capable of, and gave me further insight into how Artificial Intelligence actually works and what role it will play in our lives. While I am more interested in software development as a career, I do enjoy working on projects involving data analysis in my free time. In addition, I took a Computer Architecture course which sparked my interest of how the underlying components of a computer work, and what I can do as a software developer to optimize the software I write based on my understanding of the hardware. To understand computer hardware better, I purchased a Rasberry Pi and will be embarking on a number of projects to play around with the computer. I first plan to build a server to house a website and SQL database using the Pi. 
+              <br></br>
+              Outside of school, I am interested in hiking, fishing and golfing. I am a National Parks enthusiast and I want to visit all 61 Parks in the United States. Some of my favorite trips have been to Yellowstone, Yosemite, and Acadia National Park. I also enjoy reading, and I am always looking for book recommendations, particularily classic literature as well as personal development books. I am currently reading <i>The Tipping Point</i> by Malcolm Gladwell and <i>East of Eden</i> by John Steinbeck.
+              </p>
+          </div>
+          <div class="col-md-4 d-flex align-items-center justify-content-center">
+              <img src="images/interests.jpg" style="width:100%;"/>
+          </div>
+        </div>            
+      </div>
+    </div>
+
+    <div class="jumbotron" style="margin-bottom:0;">
+      <div class="container">
+            <h1>Activities</h1><br>
+              <h4>Teaching Assistant for CS 1110: Introduction to Programming</h4>
+              <p>
+                I support the education of over 600 students each semester in Computer Science 1110: Introduction to Programming through in-class assistance, written feedback, and facilitation of laboratory projects. The focus of this course rests in introducing students to the language of Python, and the foundations of designing and implementing computer programs. I assist in progressing the course by providing additional exam questions and developing coursework for future semesters. I also received training on ethics, diversity, classroom management and teaching techniques for CS courses.
+              </p><br></br>
+              <h4>Virgina Ambassadors</h4>
+              <p>
+                Virginia Ambassadors is an organization within the Office of Admissions at the University of Virginia that serves as a liaison between prospective students and current students enrolled at the University. I serve on the Executive Board as the chair of Hoos Online, where I oversee the online operation of the club. This includes the online chat forum that connects current students with prospective students and provides a secure environment were prospective students can ask questions and receive instant meaningful answeres. As the chair of this program, I intent to use the tool to reach out to students who may be unable to attend the school for an official campus visit due to a number of reasons including the cost of the trip or the consequences of missing school or work. I plan to create a forum specifically for first-generation individuals with first-generation college student panelists, to answer questions that the prosepctive student's parents may not know as well as provide insight into the experiences the college students have faced. In addition to this project, I am also developing a website that will allow the club to track its member's volunteer hours and use the data to enhance the quality of operations. In addition to this posiiton, I also volunteer in the office on a weekly basis to interact with students and parents and assist the Admissions Deans in administrative tasks. Furthermore, I serve as a Team Leader for the Days on the Lawn program, a series of prospective student events that is hosted for over 4,000 individuals on a yearly basis. As Team Leader, I serve to help coordinate the event as well as lead and direct volunteers to ensure that the program runs smoothly and represents the University accordingly.
+              </p> <br></br>
+              <h4>Virginia Consulting Group</h4>
+              <p>
+                I work with companies on the East Coast to provide consulting services to help implement systems and grow their business. This semester I am working with Culinary Institute of America in order to comprise data analysis and marketing strategies. In past semesters, I worked with Dominion Energy for a project involving competitive analysis. Virginia Consulting Group also provides professional development programs to further the skill sets of its members.
+              </p> <br></br>
+              <h4>ACC Leadership Symposium 2018</h4>
+              <p>
+                In February 2018, I had the incredible opportunity to attend the ACC Ladership Symposium, an event that is funded by the ACC Championship Game. This event provides students at each ACC school with the opportunity to travel to a rotating host campus and network with other students and discuss the impact that we can have within our prospective schools. Applicants are chosen based on merit and leadership roles that they have within their school. While attending the conference at Duke University, we listened to lecture from leaders within their profession, and worked on a project over the course of three days that we presented to the entire conference body. The theme of the conference was courageous leadership, which involved disuccussions and engagements on how to be a leader in a variety of settings. This experience allowed me to take the skills I learned both into the workplace as well as to my organizations at school.
+              </p>
+          </div>
+        </div> 
+    
+
+    <div class="jumbotron" style="margin-bottom:0;">
+      <div class="container">
+              <h1>Short Term Goals</h1>
+              <ul>
+                <li>Continue to work on one personal project while taking courses in the Fall Semester</li>
+                <li>Read at least 20 books in 2019</li>
+                <li>Attend a Toastmasters Conference</li>
+                <li>Work for a company where I am excited to go to work every morning</li>
+              </ul>
+              <h1>Long Term Goals</h1>
+              <ul>
+                <li>Become a Senior Software Developer in 10 years</li>
+                <li>Improve my skillset with Artificial Intelligence within the next 2 years to the point that I can consistently work on projects using AI to better the lives of users</li>
+                <li>Help individuals and small businesses with daily functions in order to save time and money with the software that I write</li>
+              </ul>
+          </div>
+        </div> 
+    <!-- 11. Use a grid-like idea for the content layout
+        Grids are rows that contain columns. 
+        Bootstrap works on a 12-column system. 
+        
+        The Bootstrap grid system has four classes:
+          xs (for phones - screens less than 768px wide)
+          sm (for tablets - screens equal to or greater than 768px wide)
+          md (for small laptops - screens equal to or greater than 992px wide)
+          lg (for laptops and desktops - screens equal to or greater than 1200px wide)
+        
+        Let's assume we will use the md class 
+        To have two columns (50% width each in full-screen width), use col-md-6. 
+        These two columns will stack on mobile and become 100% width.
+        (col-md-x specifies that we are using a medium size column)
+    -->
+<!-- 
+    <div class="container">    
+      <div class="row">
+        <div class="col-md-6">col1</div>
+        <div class="col-md-6">col2</div>
+      </div>
+    </div> -->
+   
+    <!-- 12. Let's create 3 columns, same width
+        (note: to have columns with different widths, change the x in col-md-x to
+        any numbers as long as the total is 12)
+    -->
+    
+    <!-- 8. To use bootstrap.min.js, need jquery
+         https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
+         note: js bootstrap allows menu interaction such as dropdown
+         (if only use css bootstrap, only link to the css)
+    -->        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> if you downloaded bootstrap to your computer -->
+    
+    
+  </body>
+</html>
