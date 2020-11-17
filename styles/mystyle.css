@@ -5,6 +5,7 @@
 }
 
 
+
 /* override styles to the main elements of the page */
 body {               
    /* background: #333333; */
@@ -31,6 +32,11 @@ p {
 .jumbotron p {                
    color: white; 
    font-size: 26px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
