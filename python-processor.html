@@ -9,49 +9,11 @@
    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!-- required to handle IE -->
         
-    <!-- 2. include meta tag to ensure proper rendering and touch zooming
-         (bootstrap is designed to be responsive to mobile.
-         Mobile-first styles are part of the core framework.)
-    -->  
+ 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- the width=device-width part sets the width of the page to follow
-         the screen-width of the device (which will vary depending on the device)
-         the initial-scale=1 part sets the initialize zoom level when the page 
-         is first loaded by the browser. 
-    --> 
-  
-    <!-- The above 2 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <!-- to use bootstrap:
-         option1: download the files (from http://getbootstrap.com) and put them in 
-                  your working directory
-         option2: make a link to the files from a CDN (Content Delivery Network)       
-    -->
-  
-    <!-- 3. link bootstrap pages (let's use CDN here)
-         Two basic bootstrap pages are  
-             https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" (style, link here)
-             https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js (js, link at the bottom)             
-         use a link tag to link an external resource
-         a rel (relationship) specifies relationship between the current document and the linked resource
-         href (hypertext reference) specifies the link's destination 
-    -->
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />  for version 3-->     
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> if you downloaded bootstrap to your computer -->
-  
-    <!-- required scripts for IE --> 
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-    
-    <!-- you may add styles here (document-level) or as an external file (external level) -->
-<!--     <style>
-      body { padding-top: 50px; }    // this is to leave space between navbar and heading 
-                                     // when navbar-fixed-top is used
-    </style> -->
+
     
     <title>Personal Page</title>
         
@@ -69,15 +31,7 @@ $(function(){
 <!--end of Navigation bar-->
 
     </header>
-            
-    <!-- 9. let's add jumbotron header
-        Bootstrap jumbotron header is one big, attention-grabbing header 
-        (that people view it as "modern" but we may view it as "space-wasting")
-        
-        To add a jumbotron header, as usual, bootstrap requires it to be in a container
-        (we'll comment out / remove the "Hello world!" and add the header) 
-    -->
-    <!-- <h1>Hello world!</h1> -->
+
     <div class="jumbotron" style="margin-bottom:0;">
       <div class="container">
         <h1>Overview</h1>
@@ -108,13 +62,16 @@ $(function(){
           While Python was the best choice for the backend, unfortunately the GUI that python provides are not as user friendly as I would have hoped. I primarily used tkinter for my UI. While I found that this system had everything I needed, I felt that the User Interface that I created was not up to my standards. In the future, if I had more time to work on this project, I would have used a html browser to develop the front end and have the backend run off of python. However, the tkinter worked fine for a Minimum Viable Product for my desktop application with a project deadline of one month. 
           <br></br>
           The desktop application's major bottleneck is the image recognition, which requires alot of proccessing power to read a 14 page document. I used the timing function within python to optimize the elapsed real time of the execution. However, I continuously found that the application would get caught in the image recongition phase, which will only improve as the hardware the program runs on will improve. However, I was able to optimize the application using regular expressions to parse the document, as well as using linear time operations. In addition, I wanted to create error handling in order to complete as much work as possible for the end user. I found that sometimes the OCR (optimal character recognition) algorithm sometimes had difficulty reading the text if the scan had noise. Thus, as a result, the system would crash when the document could not parse the individual's name. In order to solve this problem, I added filler text to the name of the file if the system could not recognize the name of the client, month, or client code. My hope would be that the user would quickly check the names of the files after the process was complete, and would change the file paths accordingly. The OCR fails only about 5% of the time, and there are multiple places that these data fields appear in the document which provide a second chance to be able to parse the document's critical information.
-        </p>             
+          <br></br>
+          In order to visualize the scope of the project space, I included a diagram to show the flow of information within the system. This allows for a quick and easily visualization that also allowed me to plan the development of the code. In creating diagrams such as these, I was able to rationalize the structure of the code and plan for unforseen challenges.
+        </p>
+        <img src="images/flowchart2.png" style="width:100%;"/>             
       </div>
     </div>
 
     <div class="jumbotron" style="margin-bottom:0;">
       <div class="container">
-        <h1>The Final Product</h1>
+        <h1>Initial Version</h1>
         <p>
           In order to convert my scripts into an executable that would run independent of python and the libraries it used, I used PyInstaller, which allowed me to run easy command lines to complete this process. After using pip to install pyinstaller and update python, I ran the two following lines to create a final executable.</p>
         <img src="images/python-cmd.png" style="width:100%;"/>
@@ -128,40 +85,16 @@ $(function(){
       </div>
     </div>
     
-    <!-- 11. Use a grid-like idea for the content layout
-        Grids are rows that contain columns. 
-        Bootstrap works on a 12-column system. 
-        
-        The Bootstrap grid system has four classes:
-          xs (for phones - screens less than 768px wide)
-          sm (for tablets - screens equal to or greater than 768px wide)
-          md (for small laptops - screens equal to or greater than 992px wide)
-          lg (for laptops and desktops - screens equal to or greater than 1200px wide)
-        
-        Let's assume we will use the md class 
-        To have two columns (50% width each in full-screen width), use col-md-6. 
-        These two columns will stack on mobile and become 100% width.
-        (col-md-x specifies that we are using a medium size column)
-    -->
-<!-- 
-    <div class="container">    
-      <div class="row">
-        <div class="col-md-6">col1</div>
-        <div class="col-md-6">col2</div>
+    <div class="jumbotron" style="margin-bottom:0;">
+      <div class="container">
+        <h1>Added Features</h1>
+        <p>
+          After the initial application launched, buisness needs changed beyond the scope of the initial project. The business had other formats of documents that could be implemented. This taught me an important lesson about how to scale an application. In the initial phase, I only had one document type to focus on, and thus I did not pay much attention to the organization of the code itself. The business came forward with two new document types, I decided to reorganize the code base while implementing the new feature in order to facilitate further growth of the program. This involved adding classes to house the functionality of the regular expression in parsing the document. Furthermore, I used an enumerated class to discern between the types of documents. This proved to be worthwhile, as after one month of the added functionality, the business came forth with yet another document type to process. My prior preparation made this extremely easy to implement. Furthermore, during this initial reorganization, I decided to add automated test cases. This should have been something I had established during the initial phase of the project, but as software engineers mistakingly do according to <i>The Pragmatic Programmer</i>, test cases lost priority with a short deadline. This erroneous shortcut caused problems down the line, and at this point in the development, I insisted on spending the time to add test cases, eventually creating a testing suite of 43 comprehensive automated testing cases. Both the importance of scaling and testing my code base were important lessons that I learned during this phase of the project. I have always understood the importance adjusting to changes in business needs and maintenance, but this phase allowed me to greatly appreciate the later stages of a project. The most recent iteration of the project is shown below.
+        </p> 
+        <img src="images/python-ui2.png" style="width:50%; display: block; margin-left: auto; margin-right: auto;"/>
+            
       </div>
-    </div> -->
-   
-    <!-- 12. Let's create 3 columns, same width
-        (note: to have columns with different widths, change the x in col-md-x to
-        any numbers as long as the total is 12)
-    -->
- 
-    
-    <!-- 8. To use bootstrap.min.js, need jquery
-         https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
-         note: js bootstrap allows menu interaction such as dropdown
-         (if only use css bootstrap, only link to the css)
-    -->        
+    </div>     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <!-- <script src="js/bootstrap.min.js"></script> if you downloaded bootstrap to your computer -->
